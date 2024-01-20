@@ -1,0 +1,16 @@
+export(TwoByTwo)
+
+export(kappa_cohen)
+export(kappa_fleiss)
+
+export(SIR)
+
+export(MR)
+export(TI)
+export(SMR)
+
+
+importFrom(epiR, epi.conf)
+importFrom(epitools, riskratio.wald)
+
+
