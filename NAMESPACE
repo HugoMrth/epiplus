@@ -9,6 +9,7 @@ export(MR)
 export(TI)
 export(SMR)
 
+export(standardizedDifference)
 
 importFrom(epiR, epi.conf)
 importFrom(epitools, riskratio.wald)
