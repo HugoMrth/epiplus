@@ -4,7 +4,7 @@
 \name{SMR}
 \alias{SMR}
 \alias{MR}
-\alias{TI}
+\alias{IR}
 \description{
 Formulas for Mortality Rate (MR) and Standardized Mortality Rate (SMR) calculation.
 SMR calculation can be done in different ways depending on the available informations (all three possibilities are available here).
@@ -28,36 +28,35 @@ SMR calculation can be done in different ways depending on the available informa
   SMR(n.obs, pop.obs, MR.ref)
 }\arguments{
   \item{n.obs}{
-    Le nombre de cas observe dans la population d'etude.
+    Number of observed cases in the studied population
 }
   \item{n.exp}{
-    Le nombre de cas attendus.
+    Number of expected cases
 }
   \item{n.ref}{
-    Le nombre de cas observe dans la population totale/de reference.
+    Number of observed cases in the reference population
 }
   \item{pop.obs}{
-    La taille de la population d'etude.
+    Size of the studied population
 }
   \item{pop.ref}{
-    La taille de la population totale/de reference.
+Size of the reference population
 }
   \item{MR.ref}{
-    Le taux de mortalite observe dans la population totale/de reference.
+Mortality rate in the reference population
 }
   \item{by}{
-    La tranche de population sur laquelle appliquer le taux. Par defaut 100.000.
+Denominator to use for the rate calculation. Default is 100 000.
 }
   \item{decimal}{
-    Le nombre de chiffre apres la virgule desires pour les calculs. Par defaut 1.
+Number of decimals to compute. Default is 1.
 }
 }\value{
-  Un numérique ou un vecteur de numériques
+A numerical value.
 }\author{
   Hugo Marthinet
 }\examples{
-# Tests du MR
-
+# MR
 pop_tot <- c(32648555, 32587453)
 nb_ref <- c(61904, 59910)
 
@@ -65,15 +64,16 @@ MR(nb_ref, pop_tot)
 
 
 
-# Tests du SMR
+# SMR 
 
+# Setting the values
 pop_tot <- c(32648555, 32587453)
 nb_ref <- c(61904, 59910)
 MR_ref <- c(190, 183)
 pop_obs <- c(300340, 301352)
 nb_exp <- c(570, 551)
 nb_obs <- c(200, 213)
-
+# All three diffrent way to use the function
 SMR(nb_obs, nb_exp, decimal = 3)
 SMR(n.obs = nb_obs, n.ref = nb_ref, pop.obs = pop_obs, pop.ref = pop_tot, decimal = 3)
 SMR(n.obs = nb_obs, pop.obs = pop_obs, MR.ref = MR_ref, decimal = 3)
