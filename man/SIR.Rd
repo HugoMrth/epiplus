@@ -1,40 +1,37 @@
 \title{
   Standardized Infection Ratio (SIR)
 }\name{SIR}\alias{SIR}\description{
-  Calcul le SIR d'une population
+  Compute the Standardized Infection Ratio of a population.
 }\usage{
   SIR(data, value, ref.value, loc, ref.loc)
 }\arguments{
   \item{data}{
-    Le jeu de données
+    A data frame containing the data.
 }
   \item{value}{
-    Nom (ou numéro) de la colonne de la variable sur laquelle calculer le SIR.
+Name or index of the variable on which to compute the SIR.
 }
   \item{ref.value}{
-    Valeur de référence du vecteur de valeur. Par défaut, le SIR est calculé pour toutes les valeurs
-    et la sortie de la fonction est un vecteur
+Reference value to use. By default, the SIR is calculated on each vaue individualy, and the output is a vector.
 }
   \item{loc}{
-    Nom (ou numéro) de la colonne de la variable qui correspond au lieu.
+Name or index of the location variable.
 }
   \item{ref.loc}{
-    Valeur de référence du vecteur de lieux. Par défaut, le SIR est calculé pour toutes les valeurs
-    et la sortie de la fonction est un vecteur
+Reference value for the location vector. By default, the SIR is calculated on each vaue individualy, and the output is a vector.
 }
 }\value{
-  Un numérique ou un vecteur de numériques
+  Either a numerical value, or a vector, depending on the parameters.
 }\author{
   Hugo Marthinet
 }\examples{
-# Chargement du dataset
+# Data
 library(tab)
 head(tabdata)
 
-#Calculs des SIR
-#Pour une population donnée
+# SIR for a given population
 SIR(tabdata, value = "Sex", ref.value = "Female", loc = "Race", ref.loc = "White")
 
-#Pour toutes les combinaisons de populations
+# SIR for every possible combinaison
 SIR(tabdata, value = "Sex", loc = "Race")
 }
