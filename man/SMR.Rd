@@ -6,10 +6,11 @@
 \alias{MR}
 \alias{TI}
 \description{
-  Formules de calcul des taux de mortalite (MR) et taux de mortalite standardise (SMR). La calcul du SMR peut s'effetcue de plusieurs facons selon les informations disponibles. Les trois usages possibles sont renseignes ci-dessous.
+Formulas for Mortality Rate (MR) and Standardized Mortality Rate (SMR) calculation.
+SMR calculation can be done in different ways depending on the available informations (all three possibilities are available here).
 }\usage{
-  # Calcul du taux de mortalite/d'incidence
-  # Les fonctiones MR() et TI() sont equivalentes.
+  # Mortality/Incidence Rate
+  # MR and IR are equivalent 
   MR(n.obs, pop.ref,
      by = 100000,
      decimal = 1)
