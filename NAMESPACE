@@ -6,7 +6,7 @@ export(kappa_fleiss)
 export(SIR)
 
 export(MR)
-export(TI)
+export(IR)
 export(SMR)
 
 export(standardizedDifference)
