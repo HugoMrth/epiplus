@@ -11,7 +11,7 @@
 }
 
 \description{
-  Complements de fonctions metier d'epidemiologie non retrouvees dans les autres packages du CRAN.
+Complementary epidemiology indicators and measures.
 }
 
 \details{
@@ -37,9 +37,9 @@
 }
 
 \seealso{
-  Autres packages developpes au CESPA :
+  Other packages by the same authors :
 
-  \code{\link{lazyMe}}, \code{\link{MDBprod}}, \code{\link{manageR}}, \code{\link{surveyscores}}, \code{\link{NSN}}
+  \code{\link{lazyMe}}, \code{\link{dataDesc}}, \code{\link{manageR}}, \code{\link{surveyscores}}, \code{\link{sampleSize}}
 }
 
 \examples{
