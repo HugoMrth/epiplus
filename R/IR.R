@@ -1,4 +1,4 @@
-TI <- function(n.obs, pop.ref,
+IR <- function(n.obs, pop.ref,
                by = 100000,
                decimal = 1) {
 
@@ -11,5 +11,5 @@ TI <- function(n.obs, pop.ref,
 # pop_tot <- c(32648555, 32587453)
 # nb_ref <- c(61904, 59910)
 #
-# TI(nb_ref, pop_tot)
+# IR(nb_ref, pop_tot)
 
