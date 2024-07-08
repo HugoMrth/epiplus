@@ -2,10 +2,10 @@ kappa_cohen <- function(table) {
 
   #### Check Params ####
   if(is.null(table)){
-    stop("table manquant")
+    stop("table missing")
   }
   if(dim(table) == c(2, 2)){
-    stop("table n'est pas de dimensions 2x2")
+    stop("table must be a 2 by 2 table")
   }
 
   # Conversion en matrice
