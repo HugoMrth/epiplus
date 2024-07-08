@@ -1,4 +1,4 @@
-TwoByTwo <- function(tab = NULL,
+confusionMetrics <- function(tab = NULL,
                            x.vrai = NULL,
                            x.test = NULL,
                            n.decimal = 3) {
