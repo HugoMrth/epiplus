@@ -1,4 +1,4 @@
-export(TwoByTwo)
+export(confusionMetrics)
 
 export(kappa_cohen)
 export(kappa_fleiss)
