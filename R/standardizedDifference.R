@@ -7,12 +7,12 @@ standardizedDifference <- function(
        length(c(prop.treatment, prop.control)) == 2) |
       (length(c(mean.treatment, mean.control, sd.treatment, sd.control)) == 4 & 
        length(c(prop.treatment, prop.control)) > 0)) {
-    stop("You must fill in EITHER the means and standard deviation for a quantitative variable,
+    stop("You must provide EITHER the means and standard deviation for a quantitative variable,
          or the proportion for a dichotomous variable")
   }
   if (length(c(mean.treatment, mean.control, sd.treatment, sd.control)) < 4 & 
       length(c(prop.treatment, prop.control)) < 2) {
-        stop("You must fill in the ALL OF the means and standard deviation for a quantitative variable,
+        stop("You must provide the ALL OF the means and standard deviation for a quantitative variable,
          or the proportion for a dichotomous variable")
   }
   
