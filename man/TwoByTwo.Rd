@@ -1,8 +1,8 @@
 \title{
-  Calculs sur une matrice de confusion 2x2
+  Metrics of a confusion matrix
 }
-\name{TwoByTwo}
-\alias{TwoByTwo}
+\name{confusionMetrics}
+\alias{confusionMetrics}
 \description{
   Compile tous les indicateurs issus d'une matrice de confusion 2x2 : la prevalence,
   les risques de premiere et deuxieme espece, les sensibilite et specificite et les
