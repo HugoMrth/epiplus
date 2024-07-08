@@ -19,7 +19,7 @@ Complementary epidemiology indicators and measures.
     Package: \tab  epiplus \cr
     Type: \tab
     Package\cr
-    Version: \tab  0.1.0 \cr
+    Version: \tab  0.2.1 \cr
     Date: \tab  01/10/2022 \cr
     License: \tab neant \cr
     LazyLoad: \tab yes\cr
