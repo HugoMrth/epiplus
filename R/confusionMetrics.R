@@ -1,24 +1,24 @@
 confusionMetrics <- function(tab = NULL,
-                           x.vrai = NULL,
+                           x.true = NULL,
                            x.test = NULL,
                            n.decimal = 3) {
 
   #### Check Params ####
 
-  if(is.null(tab) & (is.null(x.vrai) | is.null(x.test))){
-    stop("Vous devez rensigner l'argument tab, ou x.vrai et x.test.")
+  if(is.null(tab) & (is.null(x.true) | is.null(x.test))){
+    stop("You must either provide tab, or both x.true and x.test.")
   }
 
   if(!is.null(tab) & all(dim(tab) != c(2, 2))){
-    stop("La matrice de condusion en entree doit etre de dimensions 2x2")
+    stop("Confusion matrix must be a two by two table.")
   }
 
   if(is.null(tab)) {
-    if (length(x.vrai) != length(x.test)) {
-      stop("Les deux vecteurs doivent etre de meme longueur")
+    if (length(x.true) != length(x.test)) {
+      stop("x.true and x.test must have the same length.")
     }
 
-    inv_tab <- table(x.test, x.vrai)
+    inv_tab <- table(x.test, x.true)
     tab <- matrix(c(inv_tab[2, 2], inv_tab[2, 1], inv_tab[1, 2], inv_tab[1, 1]),
                   nrow = 2, byrow = TRUE)
   }
@@ -65,7 +65,7 @@ confusionMetrics <- function(tab = NULL,
 # TwoByTwo(tab = tab)
 #
 # #Test vecteurs
-# x.vrai <- c(rep(1, 71), rep(0, 9))
+# x.true <- c(rep(1, 71), rep(0, 9))
 # x.test <- c(rep(1, 67), rep(0, 11), rep(1, 2))
-# TwoByTwo(x.vrai = x.vrai,
+# TwoByTwo(x.true = x.true,
 #          x.test = x.test)
