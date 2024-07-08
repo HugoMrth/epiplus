@@ -6,7 +6,7 @@
 }
 \description{
 Compute the Cohen's kappa coefficient for inter-rater reliability of categorical variable. 
-Output is between -1 (complete dissagreement) and 1 (complete agreement).
+Output is bounded between -1 (complete dissagreement) and 1 (complete agreement).
 This only works for he specific case where there are two raters and two possible outcomes.
 The Fleiss' kappa is  the generalized metric for any given number of raters and categories.
 }
