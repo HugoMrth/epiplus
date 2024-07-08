@@ -4,11 +4,11 @@ SMR <- function(n.obs = NULL, n.exp = NULL,
                by = 100000, decimal = 1) {
 
   if(is.null(n.obs)){
-    stop("Vous devez obligatoirement renseigner le nombre de cas observes.")
+    stop("n.obs is missing")
   }
 
   if (is.null(n.exp) & is.null(pop.obs)) {
-    stop("Si le nombre de cas attendu n'est pas renseigne, la taille de la population d'etude doit obligatoirement l'etre.")
+    stop("If n.exp is missing, pop.obs must be provided")
   }
 
   if (!is.null(n.obs) & !is.null(n.exp)) {
@@ -26,7 +26,7 @@ SMR <- function(n.obs = NULL, n.exp = NULL,
     return(round(SMR, decimal))
   }
 
-  stop("Les parametres renseignes ne permettent pas de calculer le SMR. cf. doc pour les trois possibilites d'utilisation")
+  stop("The provided parameters do not allow SMR calculation. Please use ?SMR")
 }
 
 
