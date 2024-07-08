@@ -4,41 +4,38 @@
 \name{confusionMetrics}
 \alias{confusionMetrics}
 \description{
-  Compile tous les indicateurs issus d'une matrice de confusion 2x2 : la prevalence,
-  les risques de premiere et deuxieme espece, les sensibilite et specificite et les
-  valeurs predictive positive et negative.
+Compute various metrics of a confusion matrix : prevalence, type I and II errors, sensibility, specificity, negative and positive predictive rates. 
 }\usage{
-  TwoByTwo(tab = NULL,
-                x.vrai = NULL,
+  confusionMetrics(tab = NULL,
+                x.true = NULL,
                 x.test = NULL,
                 n.decimal = 3)
 }\arguments{
   \item{tab}{
-    La matrice de confusion 2x2. La première cellule doit être les vrais positifs.
+    The confusion matrix. The top right cell is considered to be the true positive.
 }
-  \item{x.vrai}{
-    Le vecteur de valeurs vraies. Le vecteur doit être en 0/1 numerique, ou TRUE/FALSE.
-    Cet argument n'est utilise que si \code{tab} n'est pas renseigne.
+  \item{x.true}{
+The true values vector. Must be either numerical (0 and 1) or boolean. This is ignored if \code{tab} is provided.
 }
   \item{x.test}{
-    Meme chose pour les valeurs issues du test.
+The predicted values vector. Must be either numerical (0 and 1) or boolean. This is ignored if \code{tab} is provided.
 }
   \item{n.decimal}{
-    Nombre de decimales dans les indicateurs, par defaut 3.
+Number of decimals included in the output metrics, default is 3.
 }
 }\value{
-  Une liste de valeurs
+  A list of metrics
 }\author{
   Hugo Marthinet
 }\examples{
-#Test Matrice
+#Dummy matrix
 (tab <- matrix(c(67, 2, 4, 7),
               nrow = 2, byrow = TRUE))
-unlist(TwoByTwo(tab = tab))
+unlist(confusionMetrics(tab = tab))
 
-#Test vecteurs
+#Dummy vectors
 x.vrai <- c(rep(1, 71), rep(0, 9))
 x.test <- c(rep(1, 67), rep(0, 11), rep(1, 2))
-unlist(TwoByTwo(x.vrai = x.vrai,
+unlist(confusionMetrics(x.true = x.true,
                x.test = x.test))
 }
