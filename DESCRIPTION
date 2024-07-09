@@ -2,8 +2,7 @@ Package: epiplus
 Type: Package
 Title: epiplus
 Version: 0.2.0
-Authors@R: c(
-    person("Hugo", "Marthinet", email = "h.marthinet@gmail.com", role = "cre")
+Authors@R: person("Hugo", "Marthinet", email = "h.marthinet@gmail.com", role = "cre")
 Maintainer: Hugo Marthinet <h.marthinet@gmail.com>
 Description: Complementary epidemiology indicators and metrics
 License: --------
