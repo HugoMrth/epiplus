@@ -10,6 +10,8 @@ export(IR)
 export(SMR)
 
 export(standardizedDifference)
+export(morbidity)
+export(CoC)
 
 importFrom(epiR, epi.conf)
 importFrom(epitools, riskratio.wald)
