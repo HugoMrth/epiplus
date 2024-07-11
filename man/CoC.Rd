@@ -5,7 +5,7 @@
 \alias{CoC}
 \description{
 Compute various metrics of a continuity of care. This includes both measures of concentration (or density) and dispersion.
-  Some other measures, not included here, also take into account the time factor. The one presented here only rely on
+  Some other measures, not included here like the SECON index, also take into account the time factor. The one presented here only rely on
   the numbers of visits to healthcare professionals.
 }\usage{
 CoC(w, n,
