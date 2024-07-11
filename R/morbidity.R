@@ -1,5 +1,4 @@
-morbidity <- function(type,
-                      gender = NULL,
+morbidity <- function(gender = NULL,
                       age = NULL,
                       isch.heart = NULL,
                       cerebro.vasc = NULL,
@@ -22,12 +21,98 @@ morbidity <- function(type,
                       es.renal = NULL,
                       liver.pancr = NULL) {
 
-  type <- match.arg(type, choices = c("MRMI", "ERMI"))
+  gender <- match.arg(gender, choices = c("M", "F"))
 
-  if (any(is.null(c(gender, age, isch.heart, cerebro.vasc, heart.fail,
-                    periph.vasc, diabetes, cancer, cancer.hist, schizo,
-                    depression, subst.abuse, dementia, parkinson,
-                    mult.sclero, epilespy, chornic.resp, infl.bowel,
-                    rheum.arthr, HIV, es.renal, liver.pancr))))
+  if (!is.numeric(age)) stop("Age must be numeric (years)")
 
+  if (is.null(gender) | is.null(age) | is.null(isch.heart) | is.null(cerebro.vasc) |
+      is.null(heart.fail) | is.null(periph.vasc) | is.null(diabetes) | is.null(cancer) |
+      is.null(cancer.hist) | is.null(schizo) | is.null(depression) | is.null(subst.abuse) |
+      is.null(dementia) | is.null(parkinson) | is.null(mult.sclero) | is.null(epilespy) |
+      is.null(chornic.resp) | is.null(infl.bowel) | is.null(rheum.arthr) | is.null(HIV) |
+      is.null(es.renal) | is.null(liver.pancr)) {
+    stop("All arguments are required")
+  }
+
+  if (!(all(isch.heart %in% c(0, 1, TRUE, FALSE)) & all(cerebro.vasc %in% c(0, 1, TRUE, FALSE)) &
+      all(heart.fail %in% c(0, 1, TRUE, FALSE)) & all(periph.vasc %in% c(0, 1, TRUE, FALSE)) &
+      all(diabetes %in% c(0, 1, TRUE, FALSE)) & all(cancer %in% c(0, 1, TRUE, FALSE)) &
+      all(cancer.hist %in% c(0, 1, TRUE, FALSE)) & all(schizo %in% c(0, 1, TRUE, FALSE)) &
+      all(depression %in% c(0, 1, TRUE, FALSE)) & all(subst.abuse %in% c(0, 1, TRUE, FALSE)) &
+      all(dementia %in% c(0, 1, TRUE, FALSE)) & all(parkinson %in% c(0, 1, TRUE, FALSE)) &
+      all(mult.sclero %in% c(0, 1, TRUE, FALSE)) & all(epilespy %in% c(0, 1, TRUE, FALSE)) &
+      all(chornic.resp %in% c(0, 1, TRUE, FALSE)) & all(infl.bowel %in% c(0, 1, TRUE, FALSE)) &
+      all(rheum.arthr%in% c(0, 1, TRUE, FALSE)) & all(HIV %in% c(0, 1, TRUE, FALSE)) &
+      all(es.renal %in% c(0, 1, TRUE, FALSE)) & all(liver.pancr %in% c(0, 1, TRUE, FALSE)))) {
+    stop("All arguments accept type must be c(0,1) or c(TRUE, FALSE)")
+  }
+
+  ind_mrmi <- ifelse(gender == "M", 1, 0) + floor((age - 65)/5) +
+      isch.heart * 0 + cerebro.vasc * 1 + heart.fail * 1 + periph.vasc * 1 +
+        diabetes * 1 + cancer * 3 + cancer.hist * 0 + schizo * 1 + depression * 1 +
+          subst.abuse * 2 + dementia * 2 + parkinson * 1 + mult.sclero * 2 + epilespy * 1 +
+            chornic.resp * 1 +  infl.bowel * 0 + rheum.arthr * 1 + HIV * 0 + es.renal * 2 +
+              liver.pancr * 2
+
+ ind_ermi <- ifelse(gender == "M", 0, 0) + floor((age - 65)/5) +
+      isch.heart * 2 + cerebro.vasc * 3 + heart.fail * 3 + periph.vasc * 3 +
+      diabetes * 4 + cancer * 7 + cancer.hist * 2 + schizo * 6 + depression * 5 +
+      subst.abuse * 5 + dementia * 2 + parkinson * 5 + mult.sclero * 9 + epilespy * 3 +
+      chornic.resp * 3 +  infl.bowel * 0 + rheum.arthr * 4 + HIV * 10 + es.renal * 16 +
+      liver.pancr * 5
+
+
+  return(list(
+    MRMI = ind_mrmi,
+    ERMI = ind_ermi
+  ))
 }
+
+
+
+# morbidity(gender = "M",
+#                       age = 75,
+#                       isch.heart = 0,
+#                       cerebro.vasc = 0,
+#                       heart.fail = 0,
+#                       periph.vasc = 0,
+#                       diabetes = 1,
+#                       cancer = 0,
+#                       cancer.hist = 0,
+#                       schizo = 0,
+#                       depression = 0,
+#                       subst.abuse = 0,
+#                       dementia = 0,
+#                       parkinson = 0,
+#                       mult.sclero = 0,
+#                       epilespy = 0,
+#                       chornic.resp = 1,
+#                       infl.bowel = 0,
+#                       rheum.arthr = 0,
+#                       HIV = 0,
+#                       es.renal = 0,
+#                       liver.pancr = 0)
+#
+#
+# morbidity(gender = "M",
+#           age = sample(50:90, 100, replace = TRUE),
+#           isch.heart = sample(c(0,1), 100, replace = TRUE),
+#           cerebro.vasc = sample(c(0,1), 100, replace = TRUE),
+#           heart.fail = sample(c(0,1), 100, replace = TRUE),
+#           periph.vasc = sample(c(0,1), 100, replace = TRUE),
+#           diabetes = sample(c(0,1), 100, replace = TRUE),
+#           cancer = sample(c(0,1), 100, replace = TRUE),
+#           cancer.hist = sample(c(0,1), 100, replace = TRUE),
+#           schizo = sample(c(0,1), 100, replace = TRUE),
+#           depression = sample(c(0,1), 100, replace = TRUE),
+#           subst.abuse = sample(c(0,1), 100, replace = TRUE),
+#           dementia = sample(c(0,1), 100, replace = TRUE),
+#           parkinson = sample(c(0,1), 100, replace = TRUE),
+#           mult.sclero = sample(c(0,1), 100, replace = TRUE),
+#           epilespy = sample(c(0,1), 100, replace = TRUE),
+#           chornic.resp = sample(c(0,1), 100, replace = TRUE),
+#           infl.bowel = sample(c(0,1), 100, replace = TRUE),
+#           rheum.arthr = sample(c(0,1), 100, replace = TRUE),
+#           HIV = sample(c(0,1), 100, replace = TRUE),
+#           es.renal = sample(c(0,1), 100, replace = TRUE),
+#           liver.pancr = sample(c(0,1), 100, replace = TRUE))

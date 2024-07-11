@@ -4,7 +4,7 @@
 \name{morbidity}
 \alias{morbidity}
 \description{
-  Calculation of the Two morbidity indices as described in Constantinou (2018). 
+  Calculation of the Two morbidity indices as described in Constantinou (2018).
 The outcome-specific Mortality-Related Morbidity
 Index (MRMI) and Expenditure-Related Morbidity
 Index (ERMI), predictive of mortality and of
@@ -12,7 +12,7 @@ health care expenditure, respectively, were developed
 and validated in a nationwide population of
 people aged 65 years and older, with better overall
 performance and better calibration than comparable
-Charlson indices. \br
+Charlson indices. \cr
 Every argument expect gender and age correspond to wether or not the patients
 present the given comorbidity. All of those must be binary (either a unique value or a vector).
 Supported binary format are of the types \code{c(0, 1)} and \code{c(TRUE, FALSE)}.
@@ -121,6 +121,7 @@ Volume 103,
 Pages 60-70,
 ISSN 0895-4356,
 https://doi.org/10.1016/j.jclinepi.2018.07.003.
+}
 \examples{
 morbidity(gender = "M",
                       age = 75,
