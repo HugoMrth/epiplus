@@ -22,7 +22,7 @@ devtools::install_github("HugoMrth/epiplus")
   
 ### 2) Purpose
 
-This packages proposes a variety of epidemiology related function unavailable in other tools. This is mostly mathematical formulas and combination of functions from several existing CRAN packages.
+This packages proposes a variety of epidemiology and pharmacoepidemiology related function unavailable in other tools. This is mostly mathematical formulas and combination of functions from several existing CRAN packages.
 
 
 
