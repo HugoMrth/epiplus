@@ -4,7 +4,7 @@ Title: epiplus
 Version: 0.2.0
 Authors@R: person("Hugo", "Marthinet", email = "h.marthinet@gmail.com", role = "cre")
 Maintainer: Hugo Marthinet <h.marthinet@gmail.com>
-Description: Complementary epidemiology indicators and metrics
+Description: Complementary epidemiology and pharmacoepidemiology measures
 License: --------
 Encoding: UTF-8
 LazyData: true
