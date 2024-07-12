@@ -11,6 +11,7 @@ export(SMR)
 
 export(standardizedDifference)
 export(morbidity)
+export(comorbidity)
 export(CoC)
 
 importFrom(epiR, epi.conf)
