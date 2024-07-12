@@ -17,26 +17,26 @@ Every argument expect gender and age correspond to wether or not the patients
 present the given comorbidity. All of those must be binary (either a unique value or a vector).
 Supported binary format are of the types \code{c(0, 1)} and \code{c(TRUE, FALSE)}.
 }\usage{
-  morbidity(age = NULL,
-                      myocard.infarct = NULL,
-                      heart.fail = NULL,
-                      periph.vasc = NULL,
-                      cerebr = NULL,
-                      dementia = NULL,
-                      chornic.pulm = NULL,
-                      connect.tissue = NULL,
-                      ulcer = NULL,
-                      mild.liver = NULL,
-                      diabetes = NULL,
-                      hemiplegia = NULL,
-                      renal = NULL,
-                      diabetes.org.dmg = NULL,
-                      tumor = NULL,
-                      leukemia = NULL,
-                      lymphoma = NULL,
-                      mode.sev.liver = NULL,
-                      metast.tumor = NULL,
-                      aids = NULL)
+  comorbidity(age,
+              myocard.infarct,
+             heart.fail,
+             periph.vasc,
+             cerebr,
+             dementia,
+             chornic.pulm,
+             connect.tissue,
+             ulcer,
+             mild.liver,
+             diabetes,
+             hemiplegia,
+             renal,
+             diabetes.org.dmg,
+             tumor,
+             leukemia,
+             lymphoma,
+             mode.sev.liver,
+             metast.tumor,
+             aids)
 }\arguments{
   \item{age}{
     Age in years as a numeric.
