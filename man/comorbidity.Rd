@@ -4,16 +4,11 @@
 \name{comorbidity}
 \alias{comorbidity}
 \description{
-  Calculation of the Two morbidity indices as described in Constantinou (2018).
-The outcome-specific Mortality-Related Morbidity
-Index (MRMI) and Expenditure-Related Morbidity
-Index (ERMI), predictive of mortality and of
-health care expenditure, respectively, were developed
-and validated in a nationwide population of
-people aged 65 years and older, with better overall
-performance and better calibration than comparable
-Charlson indices. \cr
-Every argument expect gender and age correspond to wether or not the patients
+  Calculation of the Charlson Comorbidity Index as described in Charlson (1987).
+The method of classifying comorbidity provides a simple,
+readily applicable and valid method of estimating risk of death from comorbid disease for use in
+longitudinal studies. \cr
+Every argument expect age correspond to wether or not the patients
 present the given comorbidity. All of those must be binary (either a unique value or a vector).
 Supported binary format are of the types \code{c(0, 1)} and \code{c(TRUE, FALSE)}.
 }\usage{
