@@ -4,9 +4,9 @@
 \name{adherence}
 \alias{adherence}
 \description{
-Compute various metrics of a continuity of care. This includes both measures of concentration (or density) and dispersion.
-  Some other measures, not included here like the Sequential Continuity (SECON) index, also take into account the time factor. The one presented here only rely on
-  the numbers of visits to healthcare professionals.
+A variety of measures have been developed to calculate refill adherence from administrative data such as pharmacy
+claims databases. These measures have focused on improving the accuracy of adherence measures or clarifying the evaluation
+time frame. As a result, there are many measures used to assess adherence that may or may not be comparable or accurate.
 }\usage{
 adherence(
     n.days.supplied,
@@ -64,7 +64,11 @@ Number of sites visited.
     }
 }\author{
   Hugo Marthinet
-}\examples{
+}
+\references{
+1. Hess LM, Raebel MA, Conner DA, Malone DC. Measurement of Adherence in Pharmacy Administrative Databases: A Proposal for Standard Definitions and Preferred Measures. Annals of Pharmacotherapy. 2006;40(7-8):1280-1288. doi:10.1345/aph.1H018
+}
+\examples{
   # Example for a patient with a care sequence like : ABABBCBD
   # A, B and C being diffrent practionners
   # Order from most to leat recent (A is the most recent visit)
