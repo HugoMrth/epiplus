@@ -57,27 +57,27 @@ Quantity to be taken per day.
   Output element are as listed :
   \itemize{
   \item CMA (Continuous Measure of Medication Acquisition), the adherence value for cumulative time period :
-
+cumulative days’ supply of medication obtained/total days to next fill or to end of observation period.
   \item CMG (Continuous Measure of Medication Gaps), the nonadherence value for cumulative period winsorized at zero :
-
+total days of treatment gaps/total days to next fill or end of observation period.
   \item CMOS (Continuous Multiple Interval Measure of Oversupply), the nonadherence value for cumulative period, allowing for surplus :
-
+total days of treatment gaps (+) or surplus (–)/total days in observation period.
   \item CR (Compliance Rate), the adherence value for period between fills :
-
+(total days supplied – last days’ supply)/(last claim date – first claim date) × 100.
   \item CSA (Continuous, Single Interval Measure of Medication Aquisition), adherence value for interval of study participation overall adherence percentage :
-
+days’ supply obtained at beginning of interval/days in interval.
   \item DBR (Dates Between Fills Adherence Rate), overall adherence percentage :
-
+1 – {[(last claim date – first claim date) – total days’ supply]/(last claim date – first claim date)} × 100.
   \item MPR (Medication Possession Ratio), ratio of medication available :
-
+days’ supply: days in period.
   \item MPRm (Medication Possession Ratio, modified), adherence percentage, adjusted to include final refill period :
-
+[total days supplied/(last claim date – first claim date + last days’ supply)] × 100.
   \item MRA (Medication Refill Adherence), overall adherence percentage :
-
+(total days’ supply/total number of days evaluated) × 100.
   \item PDC (Proportion of Days Covered), percentage of days with medication available :
-
+(total days supply/total number of days evaluated) × 100%, capped at 1.0.
   \item RCR (Refill Compliance Rate), overall adherence percentage :
-
+[(sum of quantity dispensed over interval/quantity to be taken per day) × 100]/number of days in interval between first and last refill.
     }
 }\author{
   Hugo Marthinet
@@ -86,24 +86,5 @@ Quantity to be taken per day.
 1. Hess LM, Raebel MA, Conner DA, Malone DC. Measurement of Adherence in Pharmacy Administrative Databases: A Proposal for Standard Definitions and Preferred Measures. Annals of Pharmacotherapy. 2006;40(7-8):1280-1288. doi:10.1345/aph.1H018
 }
 \examples{
-  # Example for a patient with a care sequence like : ABABBCBD
-  # A, B and C being diffrent practionners
-  # Order from most to leat recent (A is the most recent visit)
 
-  seq <- "ABABBCBD"
-  pract <- c("A", "B", "C", "D")
-  vi <- rep(NA, 4)
-  for (i in 1:4) {
-    vi[i] <- length(lapply(gregexpr(pract[i], seq), attributes)[[1]]$match.length)
-  }
-  vi
-
-  CoC(w = 8,
-      n = 4, # A, B, C and D
-      vi = vi,
-      vc = 2, # 2 times A
-      vu = 4, # 4 times B
-      vs = 4) # Assuming every sites are different
-
-  CoC(8, 4, vc = 2)
 }
