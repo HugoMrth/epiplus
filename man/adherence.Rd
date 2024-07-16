@@ -6,7 +6,13 @@
 \description{
 A variety of measures have been developed to calculate refill adherence from administrative data such as pharmacy
 claims databases. These measures have focused on improving the accuracy of adherence measures or clarifying the evaluation
-time frame. As a result, there are many measures used to assess adherence that may or may not be comparable or accurate.
+time frame. As a result, there are many measures used to assess adherence that may or may not be comparable or accurate. \cr
+Eleven refill adherence measures were identified and compared using data from the LOSE Weight (Long-term
+Outcomes of Sibutramine Effectiveness on Weight) study. Measures compared include Continuous Measure of Medication
+Acquisition (CMA); Continuous Multiple Interval Measure of Oversupply (CMOS); Medication Possession Ratio (MPR); Medication
+Refill Adherence (MRA); Continuous Measure of Medication Gaps (CMG); Continuous, Single Interval Measure of Medication
+Aquisition (CSA); Proportion of Days Covered (PDC); Refill Compliance Rate (RCR); Medication Possession Ratio, modified
+(MPRm); Dates Between Fills Adherence Rate (DBR); and Compliance Rate (CR).
 }\usage{
 adherence(
     n.days.supplied,
@@ -18,49 +24,60 @@ adherence(
     quantity.supplied,
     quantity.per.day)
 }\arguments{
-  \item{w}{
-  Total number of visits.
+  \item{n.days.supplied}{
+Depending on the context, can either represent the cumulative days’ supply of medication obtained, 
+the total days supplied or the number of days’ supply obtained at beginning of interval.
 }
-  \item{n}{
-Total number of different healthcare professionnal consulted.
+  \item{n.days.gaps}{
+The total days of treatment gaps.
 }
-  \item{vi}{
-Number of visits per healcare professionnal. This is a vector unless there is only one professional.
+  \item{n.days.period}{
+Depending on the context, can either represent the total number of days to next fill or end of observation period,
+the total number of days in the observation period, the number of days in the studied interval or
+the total number of days evaluated.
 }
-  \item{vc}{
-Number of visit for the last professionnal consulted.
+  \item{n.days.last.supply}{
+The number of days’ supply obtained at the last dispensation.
 }
-  \item{vu}{
-Number of visits for the most consulted professionnal.
+  \item{surplus}{
+ The days’ supply of medication exceeding days of study participation.
 }
-  \item{vs}{
-Number of sites visited.
+  \item{diff.first.last.supply}{
+The number of days in interval between first and last refill.
+}
+  \item{quantity.supplied}{
+Sum of quantity dispensed over interval.
+}
+  \item{quantity.per.day}{
+Quantity to be taken per day.
 }
 }\value{
-  A named vector containing various concentration and dispersion measures.
+  A named vector containing various adherence measures.
   Values are missing if any necessary information in missing in the function call.
   Output element are as listed :
   \itemize{
-  \item CPC - Current Provider of Care (Smebdy 1986) : Total number of visits to the last seen
-  healthcare professionnal divide by the total number of visits.
-  \item UPC - Usual Provider of Care (Breslau et Reeb 1975) : Rate of visits to the most consulted
-  healthcare professionnal.
-  \item HCC - Clinician Index (Mainous et Gill 1998) : Equals to 1 if UPC is greater than .5, 0 otherwise.
-  \item HSC - Site index (Mainous et Gill 1998) : Equals to 1 if the rate of visits to the
-  usual site is greater than .5, 0 otherwise.
-  \item HI - Herfindahl Index (Eriksson et Mattsson 1983) : Sum of the squared fractions of visits
-  per healthcare professionnal.
-  \item CI - Continuity Index (Mainous et Gill 1998) : Base on both the clinicians and site indexes.
-  Equals to 1 if HCC=1 and CI=1, 0 if HCC=0 and CI=0, .5 otherwise.
-  \item CoC - Bice-Boxerman continuity of care (Bice et Boxerman 1977) : Frequency to which the patients
-  consulted the same healthcare professionnal over the time period. CoC=[(∑(v(i)/w)²-(1/w)]/[1-(1/w)]
-  \item EK - Ejlertsson’s K Index (Ejlertsson 1984) : Using only the total number of visits and professionnals
-    consulted : EK=(w-n)/(w-1).
-  \item MCI - Modified Continuity Index (Sturnberg 2002) : MCI=1-n/(w+0,1)
-  \item PPC - Personal Provider Continuity (Sturnber 2002) : Dichotomised version of the MCI. Equals to 1 if
-   MCI greater than .66, 0 otherwise.
-  \item MMCI - Modified, Modified Continuity Index (Magill et Senf 1987) : MMCI=[1-n/(w+0,1)] / [1-1/(w+0,1)]
-  \item INOP - Inverse Number of Providers (Eriksson et Mattsson 1983) : Inverse of the total number of visits.
+  \item CMA (Continuous Measure of Medication Acquisition), the adherence value for cumulative time period :
+
+  \item CMG (Continuous Measure of Medication Gaps), the nonadherence value for cumulative period winsorized at zero :
+
+  \item CMOS (Continuous Multiple Interval Measure of Oversupply), the nonadherence value for cumulative period, allowing for surplus :
+
+  \item CR (Compliance Rate), the adherence value for period between fills :
+
+  \item CSA (Continuous, Single Interval Measure of Medication Aquisition), adherence value for interval of study participation overall adherence percentage :
+
+  \item DBR (Dates Between Fills Adherence Rate), overall adherence percentage :
+
+  \item MPR (Medication Possession Ratio), ratio of medication available :
+
+  \item MPRm (Medication Possession Ratio, modified), adherence percentage, adjusted to include final refill period :
+
+  \item MRA (Medication Refill Adherence), overall adherence percentage :
+
+  \item PDC (Proportion of Days Covered), percentage of days with medication available :
+
+  \item RCR (Refill Compliance Rate), overall adherence percentage :
+
     }
 }\author{
   Hugo Marthinet
