@@ -13,6 +13,7 @@ export(standardizedDifference)
 export(morbidity)
 export(comorbidity)
 export(CoC)
+export(adherence)
 
 importFrom(epiR, epi.conf)
 importFrom(epitools, riskratio.wald)
