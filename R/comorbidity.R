@@ -4,7 +4,7 @@ comorbidity <- function(age = NULL,
                       periph.vasc = NULL,
                       cerebr = NULL,
                       dementia = NULL,
-                      chornic.pulm = NULL,
+                      chronic.pulm = NULL,
                       connect.tissue = NULL,
                       ulcer = NULL,
                       mild.liver = NULL,
@@ -26,7 +26,7 @@ comorbidity <- function(age = NULL,
   if (is.null(age) | 
       is.null(myocard.infarct) | is.null(heart.fail) |
       is.null(periph.vasc) | is.null(cerebr) | 
-      is.null(dementia) | is.null(chornic.pulm) |
+      is.null(dementia) | is.null(chronic.pulm) |
       is.null(connect.tissue) | is.null(ulcer) | 
       is.null(mild.liver) | 
       is.null(hemiplegia) | is.null(renal) | 
@@ -40,7 +40,7 @@ comorbidity <- function(age = NULL,
   if (!(all(myocard.infarct %in% c(0, 1, TRUE, FALSE)) & all(heart.fail %in% c(0, 1, TRUE, FALSE)) &
         all(periph.vasc %in% c(0, 1, TRUE, FALSE)) & all(cerebr %in% c(0, 1, TRUE, FALSE)) &
         all(diabetes %in% c(0, 1, TRUE, FALSE)) & 
-        all(dementia %in% c(0, 1, TRUE, FALSE)) & all(chornic.pulm %in% c(0, 1, TRUE, FALSE)) &
+        all(dementia %in% c(0, 1, TRUE, FALSE)) & all(chronic.pulm %in% c(0, 1, TRUE, FALSE)) &
         all(connect.tissue %in% c(0, 1, TRUE, FALSE)) & all(ulcer %in% c(0, 1, TRUE, FALSE)) &
         all(mild.liver %in% c(0, 1, TRUE, FALSE)) & 
         all(hemiplegia %in% c(0, 1, TRUE, FALSE)) & all(renal %in% c(0, 1, TRUE, FALSE)) &
@@ -55,7 +55,7 @@ comorbidity <- function(age = NULL,
     myocard.infarct * 1 + heart.fail * 1 + 
     periph.vasc * 1 + cerebr * 1 +
     diabetes * 1 + 
-    dementia * 1 + chornic.pulm * 1 + 
+    dementia * 1 + chronic.pulm * 1 + 
     connect.tissue * 1 + ulcer * 1 + 
     mild.liver * 1 + 
     hemiplegia * 2 + renal * 2 +
@@ -77,7 +77,7 @@ comorbidity <- function(age = NULL,
 #   cerebr = TRUE,
 #   diabetes = 0,
 #   dementia = 0,
-#   chornic.pulm = 0,
+#   chronic.pulm = 0,
 #   connect.tissue = 0,
 #   ulcer = 0,
 #   mild.liver = 0,
@@ -109,7 +109,7 @@ comorbidity <- function(age = NULL,
 #           parkinson = sample(c(0,1), 100, replace = TRUE),
 #           mult.sclero = sample(c(0,1), 100, replace = TRUE),
 #           epilespy = sample(c(0,1), 100, replace = TRUE),
-#           chornic.resp = sample(c(0,1), 100, replace = TRUE),
+#           chronic.resp = sample(c(0,1), 100, replace = TRUE),
 #           infl.bowel = sample(c(0,1), 100, replace = TRUE),
 #           rheum.arthr = sample(c(0,1), 100, replace = TRUE),
 #           HIV = sample(c(0,1), 100, replace = TRUE),
