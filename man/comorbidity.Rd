@@ -18,7 +18,7 @@ Supported binary format are of the types \code{c(0, 1)} and \code{c(TRUE, FALSE)
              periph.vasc,
              cerebr,
              dementia,
-             chornic.pulm,
+             chronic.pulm,
              connect.tissue,
              ulcer,
              mild.liver,
@@ -51,7 +51,7 @@ Cerebrovascular disease
   \item{dementia}{
 Dementia
 }
-  \item{chornic.pulm}{
+  \item{chronic.pulm}{
 Chronic pulmonary disease
 }
   \item{connect.tissue}{
@@ -110,7 +110,7 @@ comorbidity(
   cerebr = TRUE,
   diabetes = 0,
   dementia = 0,
-  chornic.pulm = 0,
+  chronic.pulm = 0,
   connect.tissue = 0,
   ulcer = 0,
   mild.liver = 0,
