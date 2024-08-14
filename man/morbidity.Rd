@@ -33,7 +33,7 @@ Supported binary format are of the types \code{c(0, 1)} and \code{c(TRUE, FALSE)
             parkinson,
             mult.sclero,
             epilespy,
-            chornic.resp,
+            chronic.resp,
             infl.bowel,
             rheum.arthr,
             HIV = NULL,
@@ -89,7 +89,7 @@ diseases
   \item{epilespy}{
     Epilepsy
 }
-  \item{chornic.resp}{
+  \item{chronic.resp}{
     Chronic respiratory diseases (including asthma and COPD)
 }
   \item{infl.bowel}{
@@ -139,7 +139,7 @@ morbidity(gender = "M",
                       parkinson = 0,
                       mult.sclero = 0,
                       epilespy = 0,
-                      chornic.resp = 1,
+                      chronic.resp = 1,
                       infl.bowel = 0,
                       rheum.arthr = 0,
                       HIV = 0,
@@ -163,7 +163,7 @@ morbidity(gender = "M",
           parkinson = sample(c(0,1), 100, replace = TRUE),
           mult.sclero = sample(c(0,1), 100, replace = TRUE),
           epilespy = sample(c(0,1), 100, replace = TRUE),
-          chornic.resp = sample(c(0,1), 100, replace = TRUE),
+          chronic.resp = sample(c(0,1), 100, replace = TRUE),
           infl.bowel = sample(c(0,1), 100, replace = TRUE),
           rheum.arthr = sample(c(0,1), 100, replace = TRUE),
           HIV = sample(c(0,1), 100, replace = TRUE),
