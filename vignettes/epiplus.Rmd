@@ -78,20 +78,48 @@ kappa_fleiss(tab)
 ```
 
 
-
 ## (Co)morbidity
 
-
+Morbidity (Mortality-Related Morbidity Index and Expenditure-Related Morbidity Index) and comorbidity (Charlson Comorbidity Index) indexes are based on comorbidities
+observes in the patients. Those consist in a the sum of scores associated to the presence/absence of a given disease or condition. An higher score is associated
+to an higher risk.
 
 ```{r, message = FALSE}
+morbidity(gender = "M", age = 75,
+          isch.heart = 0, cerebro.vasc = 0, heart.fail = 0, periph.vasc = 0, diabetes = 1,
+          cancer = 0, cancer.hist = 0, schizo = 0, depression = 0, subst.abuse = 0,
+          dementia = 0, parkinson = 0,  mult.sclero = 0, epilespy = 0,
+          chronic.resp = 1, infl.bowel = 0, rheum.arthr = 0, HIV = 0, es.renal = 0, liver.pancr = 0)
 
+comorbidity(age = 75,
+  myocard.infarct = 0, heart.fail = 0, periph.vasc = 0, cerebr = TRUE, diabetes = 0,
+  dementia = 0, chronic.pulm = 0, connect.tissue = 0, ulcer = 0, mild.liver = 0,
+  hemiplegia = 0, renal = TRUE, diabetes metast.tumor = 0, aids = 0)
 ```
 
 
-## Adhesion
+## Adherence to care
 
-
+Adherence measures track how well patients are following their treatment. There are many ways to measures adherence, not taking into account the same metrics and making more 
+or less assumptions about how the patients are actually using their medications. One must study the literature first, and have good knowladge of the data available, before choosing a specific measure.
 
 ```{r, message = FALSE}
+# Example for a patient with a care sequence like : ABABBCBD
+# A, B and C being diffrent practionners
+# Order from most to leat recent (A is the most recent visit)
 
+seq <- "ABABBCBD"
+pract <- c("A", "B", "C", "D")
+vi <- rep(NA, 4)
+for (i in 1:4) {
+  vi[i] <- length(lapply(gregexpr(pract[i], seq), attributes)[[1]]$match.length)
+}
+vi
+
+CoC(w = 8,
+    n = 4, # A, B, C and D
+    vi = vi,
+    vc = 2, # 2 times A
+    vu = 4, # 4 times B
+    vs = 4) # Assuming every sites are different
 ```
