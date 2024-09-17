@@ -1,19 +1,93 @@
 ---
-title: "epiplus"
-output: rmarkdown::html_vignette
+title: "<h1 style='text-align:center;'> Common epidemiology measures </h1>"
+author: "Hugo Marthinet"
+date: "`r Sys.Date()`"
+output:
+  knitr:::html_vignette:
+  toc: true
 vignette: >
-  %\VignetteIndexEntry{epiplus}
   %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteEncoding{UTF-8}
+  %\VignetteIndexEntry{Common epidemiology measures}
+  %\usepackage[utf8]{inputenc}
 ---
 
-```{r, include = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>"
-)
+\setmainfont{Calibri Light}
+
+```{r, echo = FALSE, message = FALSE}
+
+# If you want to create a PDF document paste the following after line 9 above:
+#   pdf_document:
+#     toc: true
+#     highlight: tango
+#     number_sections: no
+#     latex_engine: xelatex    
+# header-includes: 
+#    - \usepackage{fontspec}
+
+knitr::opts_chunk$set(collapse = T, comment = "#>")
+options(tibble.print_min = 4L, tibble.print_max = 4L)
+library(epiplus)
 ```
 
-```{r setup}
-library(epiplus)
+This package provides calculation functions for commons epidemiology and pharmaco-epidemiology measures. This is merely an easy and accessible way to apply well known formulas.
+
+
+## Rates and confusion matrix calculus
+
+First use of this package is to compute rates along with the confidence intervals. This can be incidence or mortality rates, standardized or not.
+
+```{r, message = FALSE}
+# Parameters
+pop_tot <- c(32648555, 32587453) # Total population size
+nb_ref <- c(61904, 59910) # Number of cases
+
+MR_ref <- c(190, 183) # Reference mortality rates
+pop_obs <- c(300340, 301352) # Studied population size
+nb_exp <- c(570, 551) # Expected number of deaths
+nb_obs <- c(200, 213) # Observed number of deaths
+
+# Incidence rates
+IR(nb_ref, pop_tot)
+# Mortality rates (exactly the same, parameters names only change for convenience)
+MR(nb_ref, pop_tot)
+
+# Standardized Mortality Rate
+SMR(nb_obs, nb_exp, decimal = 3)
+SMR(n.obs = nb_obs, n.ref = nb_ref, pop.obs = pop_obs, pop.ref = pop_tot, decimal = 3)
+SMR(n.obs = nb_obs, pop.obs = pop_obs, MR.ref = MR_ref, decimal = 3)
+```
+
+One can also compute at once every metrics associated to a two by two confusion matrix :
+
+```{r, message = FALSE}
+(tab <- matrix(c(67, 2, 4, 7),
+                nrow = 2, byrow = TRUE))
+confusionMetrics(tab = tab)
+```
+
+## Reliability
+
+
+
+```{r, message = FALSE}
+
+```
+
+
+
+## (Co)morbidity
+
+
+
+```{r, message = FALSE}
+
+```
+
+
+## Adhesion
+
+
+
+```{r, message = FALSE}
+
 ```
