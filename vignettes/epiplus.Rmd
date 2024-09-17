@@ -94,7 +94,8 @@ morbidity(gender = "M", age = 75,
 comorbidity(age = 75,
   myocard.infarct = 0, heart.fail = 0, periph.vasc = 0, cerebr = TRUE, diabetes = 0,
   dementia = 0, chronic.pulm = 0, connect.tissue = 0, ulcer = 0, mild.liver = 0,
-  hemiplegia = 0, renal = TRUE, diabetes metast.tumor = 0, aids = 0)
+  hemiplegia = 0, renal = TRUE, diabetes.org.dmg = 0, tumor = 0, leukemia = 0,
+  lymphoma = 0, mode.sev.liver = 0, metast.tumor = 0, aids = 0)
 ```
 
 
