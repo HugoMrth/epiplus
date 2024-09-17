@@ -62,10 +62,10 @@ confusionMetrics <- function(tab = NULL,
 # #Test Matrice
 # (tab <- matrix(c(67, 2, 4, 7),
 #                nrow = 2, byrow = TRUE))
-# TwoByTwo(tab = tab)
+# confusionMetrics(tab = tab)
 #
 # #Test vecteurs
 # x.true <- c(rep(1, 71), rep(0, 9))
 # x.test <- c(rep(1, 67), rep(0, 11), rep(1, 2))
-# TwoByTwo(x.true = x.true,
+# confusionMetrics(x.true = x.true,
 #          x.test = x.test)
