@@ -4,7 +4,7 @@ kappa_cohen <- function(table) {
   if(is.null(table)){
     stop("table missing")
   }
-  if(dim(table) == c(2, 2)){
+  if(any(dim(table) != 2)){
     stop("table must be a 2 by 2 table")
   }
 
