@@ -6,7 +6,7 @@
 }
 \description{
 Fleiss' kappa coefficient for assessing the reliability of agreement between a fixed number of raters when assigning categorical ratings.
-Output is bounded between -1 and 1. A negative value correspon to a poor agreement between raters, whereas a value of 1 correspond to a complete agreement.
+Output is bounded between -1 and 1. A negative value corresponds to a poor agreement between raters, whereas a value of 1 correspond to a complete agreement.
 This is the genralized version of the two raters, two categories original Cohen's kappa.   
 }
 \usage{
