@@ -67,10 +67,14 @@ confusionMetrics(tab = tab)
 
 ## Reliability
 
-
+Inter-raters reliability measures such as Cohen's or Fleiss' Kappas are used to asses the degree of agreement among independent observers who rate, code, or assess the same phenomenon.
+Those measures are is bounded between -1 and 1. A negative value corresponds to a poor agreement between raters, whereas a value of 1 correspond to a complete agreement.
 
 ```{r, message = FALSE}
-
+(tab <- matrix(c(15, 17, 8, 6),
+                nrow = 2, byrow = TRUE))
+kappa_cohen(tab)
+kappa_fleiss(tab)
 ```
 
 
