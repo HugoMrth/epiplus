@@ -1,4 +1,4 @@
 library(testthat)
-library(pkg)
+library(epiplus)
 
 test_check("epiplus")
