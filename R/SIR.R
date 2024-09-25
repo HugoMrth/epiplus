@@ -2,26 +2,13 @@ SIR <- function(data, value, ref.value = NULL,
          loc, ref.loc = NULL) {
 
   #### Check Params ####
+  if(is.null(data)) stop("data manquant")
+  if(is.null(value)) stop("value manquant")
 
-  if(is.null(data)){
-    stop("data manquant")
-  }
-
-  if(is.null(value)){
-    stop("value manquant")
-  }
-
-  if (is.null(ref.value)) {
-    ref.value <- names(table(data[,value]))
-  }
-  if (is.null(ref.loc)) {
-    ref.loc <- names(table(data[,loc]))
-  }
+  if (is.null(ref.value)) ref.value <- names(table(data[,value]))
+  if (is.null(ref.loc)) ref.loc <- names(table(data[,loc]))
 
   #### Code Fonction ####
-
-
-
   res <- c()
   res_names <- c()
 

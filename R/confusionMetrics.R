@@ -5,18 +5,15 @@ confusionMetrics <- function(tab = NULL,
 
   #### Check Params ####
 
-  if(is.null(tab) & (is.null(x.true) | is.null(x.test))){
-    stop("You must either provide tab, or both x.true and x.test.")
-  }
-
-  if(!is.null(tab) & all(dim(tab) != c(2, 2))){
-    stop("Confusion matrix must be a two by two table.")
-  }
+  if(is.null(tab) & (is.null(x.true) | is.null(x.test))) stop("You must either provide tab, or both x.true and x.test.")
+  if(!is.null(tab) & all(dim(tab) != c(2, 2))) stop("Confusion matrix must be a two by two table.")
 
   if(is.null(tab)) {
-    if (length(x.true) != length(x.test)) {
-      stop("x.true and x.test must have the same length.")
-    }
+    if (length(x.true) != length(x.test)) stop("x.true and x.test must have the same length.")
+    if (length(table(x.true)) > 2) stop("x.true has more than two different values")
+    if (length(table(x.test)) > 2) stop("x.test has more than two different values")
+    if (!(all(x.true %in% c(TRUE, FALSE))) | !(all(x.true %in% c(0, 1)))) stop("all x.true values must be either (TRUE, FLASE) or (0, 1)")
+    if (!(all(x.test %in% c(TRUE, FALSE))) | !(all(x.test %in% c(0, 1)))) stop("all x.true values must be either (TRUE, FLASE) or (0, 1)")
 
     inv_tab <- table(x.test, x.true)
     tab <- matrix(c(inv_tab[2, 2], inv_tab[2, 1], inv_tab[1, 2], inv_tab[1, 1]),
@@ -56,16 +53,3 @@ confusionMetrics <- function(tab = NULL,
 
   return(res)
 }
-
-
-#
-# #Test Matrice
-# (tab <- matrix(c(67, 2, 4, 7),
-#                nrow = 2, byrow = TRUE))
-# confusionMetrics(tab = tab)
-#
-# #Test vecteurs
-# x.true <- c(rep(1, 71), rep(0, 9))
-# x.test <- c(rep(1, 67), rep(0, 11), rep(1, 2))
-# confusionMetrics(x.true = x.true,
-#          x.test = x.test)

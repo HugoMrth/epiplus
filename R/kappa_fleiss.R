@@ -2,6 +2,9 @@ kappa_fleiss <- function(table) {
   if (!(is.matrix(table))) {
     table <- as.matrix(table)
   }
+  if (any(diff(rowSums(table)) != 0)) {
+    stop("row sums must all be equal (same number of trials per rater)")
+  }
 
   p0 <- 1
   for (i in 2:nrow(table)) {
