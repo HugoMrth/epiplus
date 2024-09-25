@@ -18,15 +18,6 @@ test_that("Single output :", {
 
 test_that("Bounded within -1 and 1 :", {
   for (i in 1:10) {
-    tab22 <- matrix(data = NA, ncol = 2, nrow = 2)
-    tab22[, 1] <- sample(1:19, 2)
-    tab22[, 2] <- 20 - tab22[, 1]
-
-    tab33 <- matrix(data = NA, ncol = 3, nrow = 3)
-    tab33[, 1] <- sample(1:19, 3)
-    tab33[, 2] <- sample(1:19, 3)
-    tab33[, 3] <- 45 - rowSums(tab33[, 1:2])
-
     expect_true(kappa_cohen(tab22) > -1)
     expect_true(kappa_cohen(tab22) < 1)
     expect_true(kappa_fleiss(tab22) < 1)
