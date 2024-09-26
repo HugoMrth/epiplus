@@ -1,3 +1,6 @@
+<!-- Here the image that will be displayed when the website is shared on social networks will be configured. -->
+<meta property="og:image" content={socialImageURL} />
+
 # epiplus
 
 ## Epidemiology indicators and methods
