@@ -1,8 +1,10 @@
 <!-- Here the image that will be displayed when the website is shared on social networks will be configured. -->
 
-
-
+<p align="center">
 # <img src="inst/logo.png" height="150"/>   epiplus  
+</p>
+
+
 
 ## Epidemiology indicators and methods
   
