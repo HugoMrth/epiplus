@@ -1,5 +1,5 @@
 <!-- Here the image that will be displayed when the website is shared on social networks will be configured. -->
-![alt text](https://github.com/[HugoMrth]/[my_logos]/blob/[main]/epiplus_sticker.png?raw=true)
+![ezcv logo](https://raw.githubusercontent.com/HugoMrth/my_logos/master/.github/epiplus_sticker.png)
 
 # epiplus
 
