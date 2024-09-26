@@ -1,7 +1,14 @@
-CoC <- function(w, n = NA,
+CoC <- function(w = NA, n = NA,
                 vi = NA, vc = NA, vu = NA, vs = NA) {
+
+  if (any(!is.na(w) & (!is.numeric(w) | w < 0))) stop("w must be a positive integer")
+  if (any(!is.na(n) & (!is.numeric(n) | n < 0))) stop("n must be a positive integer")
+  if (any(!is.na(vc) & (!is.numeric(vc) | vc < 0))) stop("vc must be a positive integer")
+  if (any(!is.na(vu) & (!is.numeric(vu) | vu < 0))) stop("vu must be a positive integer")
+  if (any(!is.na(vs) & (!is.numeric(vs) | vs < 0))) stop("vs must be a positive integer")
+
   return(
-    c(
+    list(
       CPC = vc/w,
       UPC = vu/w,
       HCC = ifelse(vu/w >= 0.5, 1, 0),
@@ -19,22 +26,3 @@ CoC <- function(w, n = NA,
     )
   )
 }
-
-# Example for a patient with a care sequence like : ABABBCBD
-# A, B and C being diffrent practionners
-# Order from most to leat recent (A is the most recent visit)
-
-# seq <- "ABABBCBD"
-# pract <- c("A", "B", "C", "D")
-# vi <- rep(NA, 4)
-# for (i in 1:4) {
-#   vi[i] <- length(lapply(gregexpr(pract[i], seq), attributes)[[1]]$match.length)
-# }
-# vi
-#
-# CoC(w = 8,
-#     n = 4, # A, B, C and D
-#     vi = vi,
-#     vc = 2, # 2 times A
-#     vu = 4, # 4 times B
-#     vs = 4) # Assuming every sites are different

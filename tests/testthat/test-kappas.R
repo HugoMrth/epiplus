@@ -1,6 +1,8 @@
 test_that("Args are check properly :",  {
   expect_error(kappa_cohen(NULL))
+  expect_error(kappa_cohen(-tab22))
   expect_error(kappa_cohen(tab33))
+  expect_error(kappa_fleiss(-tab22))
   expect_error(kappa_fleiss(matrix(c(1, 2, 3, 4), ncol = 2)))
 })
 

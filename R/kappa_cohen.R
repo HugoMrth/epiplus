@@ -1,12 +1,9 @@
 kappa_cohen <- function(table) {
 
   #### Check Params ####
-  if(is.null(table)){
-    stop("table missing")
-  }
-  if(any(dim(table) != 2)){
-    stop("table must be a 2 by 2 table")
-  }
+  if(is.null(table)) stop("table missing")
+  if(any(dim(table) != 2)) stop("table must be a 2 by 2 table")
+  if (any(table < 0)) stop("frequencies cannot be negative")
 
   # Conversion en matrice
   if (!(is.matrix(table))) {
@@ -14,7 +11,6 @@ kappa_cohen <- function(table) {
   }
 
   #### Code Fonction ####
-
   # Calcul de la proportion d'accord
   p0 <- (table[1,1] + table[2,2]) / (sum(table))
   # Calcul de l'accord maximal
