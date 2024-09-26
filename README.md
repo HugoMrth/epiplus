@@ -1,5 +1,5 @@
 <!-- Here the image that will be displayed when the website is shared on social networks will be configured. -->
-<meta property="og:image" content={socialImageURL} />
+![alt text](https://github.com/HugoMrth/my_logos/epiplus_sticker.png)
 
 # epiplus
 
