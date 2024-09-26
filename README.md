@@ -1,8 +1,8 @@
 <!-- Here the image that will be displayed when the website is shared on social networks will be configured. -->
-<img src="inst/logo.png" height="100"/>
 
 
-# epiplus
+
+# epiplus  <img src="inst/logo.png" height="150"/>
 
 ## Epidemiology indicators and methods
   
