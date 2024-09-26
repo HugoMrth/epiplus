@@ -1,5 +1,5 @@
 <!-- Here the image that will be displayed when the website is shared on social networks will be configured. -->
-<img src="inst/figures/baseplot.png" height="300"/>
+<img src="inst/epiplus_sticker.png" height="300"/>
 
 
 # epiplus
