@@ -2,7 +2,7 @@
 
 
 
-# epiplus  <img src="inst/logo.png" height="150"/>
+# <img src="inst/logo.png" height="150"/>   epiplus  
 
 ## Epidemiology indicators and methods
   
