@@ -1,5 +1,6 @@
 <!-- Here the image that will be displayed when the website is shared on social networks will be configured. -->
-![ezcv logo](https://raw.githubusercontent.com/HugoMrth/my_logos/master/.github/epiplus_sticker.png)
+<img src="inst/figures/baseplot.png" height="300"/>
+
 
 # epiplus
 
