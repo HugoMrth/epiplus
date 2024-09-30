@@ -8,7 +8,7 @@ library(hexSticker)
 # Create the sticker
 sticker(
   subplot = "inst/image.png",
-  filename = "logo.png",  # Output file name
+  filename = "inst/logo.png",  # Output file name
   #img = "C:/Users/MARTHINETEX/Documents/02 - Code/logo.png",     # Path to your background image
   package = "epiplus",                 # Package name
   p_size = 16,
