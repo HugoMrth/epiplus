@@ -1,4 +1,4 @@
-kappa_cohen <- function(table) {
+cohenKappa <- function(table) {
 
   #### Check Params ####
   if(is.null(table)) stop("table missing")
