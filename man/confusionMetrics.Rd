@@ -36,7 +36,11 @@ Number of decimals included in the output metrics, default is 3.
   A list of metrics
 }\author{
   Hugo Marthinet
-}\examples{
+}
+\seealso{
+  \code{\link{cohenKappa}}, \code{\link{yuleQ}}
+}
+\examples{
 #Dummy matrix
 (tab <- matrix(c(67, 2, 4, 7),
               nrow = 2, byrow = TRUE))
