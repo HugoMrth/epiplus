@@ -1,5 +1,5 @@
-\name{kappa_cohen}
-\alias{kappa_cohen}
+\name{cohenKappa}
+\alias{cohenKappa}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
   Cohen's kappa
@@ -11,7 +11,7 @@ This only works for he specific case where there are two raters and two possible
 The Fleiss' kappa is  the generalized metric for any given number of raters and categories.
 }
 \usage{
-  kappa_cohen(table)
+  cohenKappa(table)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -37,7 +37,7 @@ A two by two contingency table corresponding to the inter-rater reliability tabl
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-  \code{\link{kappa_fleiss}}
+  \code{\link{fleissKappa}}
 
 }
 \examples{
@@ -45,5 +45,5 @@ tab22 <- matrix(data = NA, ncol = 2, nrow = 2)
 tab22[, 1] <- sample(1:19, 2)
 tab22[, 2] <- 20 - tab22[, 1]
 
-kappa_cohen(tab22)
+cohenKappa(tab22)
 }
