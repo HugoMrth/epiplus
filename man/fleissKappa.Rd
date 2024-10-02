@@ -21,24 +21,9 @@ Each cell lists the number of raters who assigned the indicated (row) subject to
 Therefore, the sum of each row should be equal to the number of raters, and every row sums should have the same value.
 }
 }
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
-\value{
-
-}
-\references{
-%% ~put references to the literature/web site here ~
-}
 \author{
   Hugo Marthinet
 }
-\note{
-%%  ~~further notes~~
-}
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
 \seealso{
   \code{\link{cohenKappa}}, \code{\link{yuleQ}}
 }

@@ -4,16 +4,15 @@
 \name{confusionMetrics}
 \alias{confusionMetrics}
 \description{
-Compute various metrics of a confusion matrix : 
+Compute various metrics of a confusion matrix :
   \itemize{
-  \item Prevalence, type I and II errors, sensibility, specificity
-  \item Positive Predictive Rate and its 95% CI
-  \item Negative Predictive Rate and its 95% CI
-  \item Odds Ratio and its 95% CI and associated p-value
-  \item Risk Ratio and its 95% CI and associated p-value
-  \item Inter-rater reliability measures : Cohen's Kappa and Yule'sQ
+  \item Various measures : prevalence, type I and II errors, sensibility, specificity
+  \item Positive Predictive Value (PPV) and its 95CI
+  \item Negative Predictive Value (NPV) and its 95CI
+  \item Odds Ratio (OR) and its 95CI and associated p-value
+  \item Risk Ratio (RR) and its 95CI and associated p-value
+  \item Inter-rater reliability measures (IRR) : Cohen's Kappa and Yule'sQ
     }
- 
 }\usage{
   confusionMetrics(tab = NULL,
                 x.true = NULL,
@@ -33,8 +32,16 @@ The predicted values vector. Must be either numerical (0 and 1) or boolean. This
 Number of decimals included in the output metrics, default is 3.
 }
 }\value{
-  A list of metrics
-}\author{
+  A list of all the metrics
+}
+\details{
+Positive and Negative Preditive Value are calculated using two different methods :
+the first one correspond to the formulas using only the TP, FP, TN and FN value, wheras the second one relies on sensibility, specifity adn prevalence. The two methods are marginally equivalent, but the second one allows for PPV and NPV calculation even if the exact contingency table isn't available (cf. https://en.wikipedia.org/wiki/Positive_and_negative_predictive_values).
+}
+\references{
+Thurin et al. (2021) Intra-database validation of case-identifying algorithms using reconstituted electronic health records from healthcare claims data
+}
+\author{
   Hugo Marthinet
 }
 \seealso{
