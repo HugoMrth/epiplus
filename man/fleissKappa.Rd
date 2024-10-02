@@ -1,5 +1,5 @@
-\name{kappa_fleiss}
-\alias{kappa_fleiss}
+\name{fleissKappa}
+\alias{fleissKappa}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
   Fleiss' kappa
@@ -7,10 +7,10 @@
 \description{
 Fleiss' kappa coefficient for assessing the reliability of agreement between a fixed number of raters when assigning categorical ratings.
 Output is bounded between -1 and 1. A negative value corresponds to a poor agreement between raters, whereas a value of 1 correspond to a complete agreement.
-This is the genralized version of the two raters, two categories original Cohen's kappa.
+This is the generalized version of the two raters, two categories original Cohen's kappa.
 }
 \usage{
-  kappa_cohen(table)
+  fleissKappa(table)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -40,7 +40,7 @@ Therefore, the sum of each row should be equal to the number of raters, and ever
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-  \code{\link{kappa_cohen}}
+  \code{\link{cohenKappa}}, \code{\link{yuleQ}}
 }
 \examples{
 tab22 <- matrix(data = NA, ncol = 2, nrow = 2)
@@ -52,6 +52,6 @@ tab33[, 1] <- sample(1:19, 3)
 tab33[, 2] <- sample(1:19, 3)
 tab33[, 3] <- 45 - rowSums(tab33[, 1:2])
 
-kappa_fleiss(tab22)
-kappa_fleiss(tab33)
+fleissKappa(tab22)
+fleissKappa(tab33)
 }
