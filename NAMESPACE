@@ -1,7 +1,8 @@
 export(confusionMetrics)
 
-export(kappa_cohen)
-export(kappa_fleiss)
+export(cohenKappa)
+export(fleissKappa)
+export(yuleQ)
 
 export(SIR)
 
