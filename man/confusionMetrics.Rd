@@ -4,7 +4,16 @@
 \name{confusionMetrics}
 \alias{confusionMetrics}
 \description{
-Compute various metrics of a confusion matrix : prevalence, type I and II errors, sensibility, specificity, negative and positive predictive rates. 
+Compute various metrics of a confusion matrix : 
+  \itemize{
+  \item Prevalence, type I and II errors, sensibility, specificity
+  \item Positive Predictive Rate and its 95% CI
+  \item Negative Predictive Rate and its 95% CI
+  \item Odds Ratio and its 95% CI and associated p-value
+  \item Risk Ratio and its 95% CI and associated p-value
+  \item Inter-rater reliability measures : Cohen's Kappa and Yule'sQ
+    }
+ 
 }\usage{
   confusionMetrics(tab = NULL,
                 x.true = NULL,
