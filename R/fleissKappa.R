@@ -1,4 +1,4 @@
-kappa_fleiss <- function(table) {
+fleissKappa <- function(table) {
   if (!(is.matrix(table))) table <- as.matrix(table)
   if (any(diff(rowSums(table)) != 0)) stop("row sums must all be equal (same number of trials per rater)")
   if (any(table < 0)) stop("frequencies cannot be negative")
