@@ -37,7 +37,7 @@ A two by two contingency table corresponding to the inter-rater reliability tabl
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-  \code{\link{fleissKappa}}
+  \code{\link{yuleQ}}, \code{\link{fleissKappa}}
 
 }
 \examples{
