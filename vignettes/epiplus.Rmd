@@ -80,9 +80,9 @@ tab33[, 1] <- sample(1:19, 3)
 tab33[, 2] <- sample(1:19, 3)
 tab33[, 3] <- 45 - rowSums(tab33[, 1:2])
 
-kappa_cohen(tab22)
-kappa_fleiss(tab22)
-kappa_fleiss(tab33)
+cohenKappa(tab22)
+fleissKappa(tab22)
+fleissKappa(tab33)
 ```
 
 
